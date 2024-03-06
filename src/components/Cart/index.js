@@ -23,14 +23,16 @@ const Cart = () => (
             ) : (
               <div className="cart-content-container">
                 <h1 className="cart-heading">My Cart</h1>
-                <button
-                  type="button"
-                  className="remove-btn"
-                  onClick={handleRemoveAllItems}
-                  data-testid="remove"
-                >
-                  Remove all
-                </button>
+                {cartList.length > 0 && (
+                  <button
+                    type="button"
+                    className="remove-btn"
+                    onClick={handleRemoveAllItems}
+                    data-testid="remove"
+                  >
+                    Remove all
+                  </button>
+                )}
                 <CartListView />
                 <CartSummary cartList={cartList} />
               </div>

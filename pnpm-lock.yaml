@@ -19,8 +19,10 @@ specifiers:
   react-dom: 17.0.1
   react-icons: 4.2.0
   react-loader-spinner: 4.0.0
+  react-popup: 0.11.2
   react-router-dom: 5.2.0
   react-scripts: 4.0.3
+  reactjs-popup: 2.0.6
 
 dependencies:
   '@testing-library/jest-dom': 5.11.9
@@ -34,7 +36,9 @@ dependencies:
   react-dom: 17.0.1_react@17.0.1
   react-icons: 4.2.0_react@17.0.1
   react-loader-spinner: 4.0.0_react-dom@17.0.1+react@17.0.1
+  react-popup: 0.11.2_react-dom@17.0.1+react@17.0.1
   react-router-dom: 5.2.0_react@17.0.1
+  reactjs-popup: 2.0.6_react-dom@17.0.1+react@17.0.1
 
 devDependencies:
   eslint-config-airbnb: 18.2.1
@@ -9137,6 +9141,10 @@ packages:
       object.values: 1.1.7
     dev: true
 
+  /keymaster/1.6.2:
+    resolution: {integrity: sha512-OvA/AALN8IDKKkTk2Z+bDrzs/SQao4lo/QPbwSdDvm+frxfiYiYCSn1aHFUypJY3SruAO1y/c771agBmTXqUtg==}
+    dev: false
+
   /keyv/4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
     dependencies:
@@ -11550,6 +11558,18 @@ packages:
       react-dom: 17.0.1_react@17.0.1
     dev: false
 
+  /react-popup/0.11.2_react-dom@17.0.1+react@17.0.1:
+    resolution: {integrity: sha512-1KzaBI20eqhg0CUYJvkeobvS0NfAz73xpxXNJs6s8XKk13ypYD7VjxS1LMtOIQohkqL5GhkZqC978YvH39qUNw==}
+    peerDependencies:
+      prop-types: ^15.6.0
+      react: ^17.0.2 || ^18.0.0
+      react-dom: ^17.0.2 || ^18.0.0
+    dependencies:
+      keymaster: 1.6.2
+      react: 17.0.1
+      react-dom: 17.0.1_react@17.0.1
+    dev: false
+
   /react-refresh/0.8.3:
     resolution: {integrity: sha512-X8jZHc7nCMjaCqoU+V2I0cOhNW+QMBwSUkeXnTi8IPe6zaRWfn60ZzvFDZqWPfmSJfjub7dDW1SP0jaHWLu/hg==}
     engines: {node: '>=0.10.0'}
@@ -11684,6 +11704,17 @@ packages:
     dependencies:
       loose-envify: 1.4.0
       object-assign: 4.1.1
+    dev: false
+
+  /reactjs-popup/2.0.6_react-dom@17.0.1+react@17.0.1:
+    resolution: {integrity: sha512-A+tt+x9wdgZiZjv0e2WzYLD3IfFwJALaRaqwrCSXGjo0iQdsry/EtBEbQXRSmQs7cHmOi5eytCiSlOm8k4C+dg==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: '>=16'
+      react-dom: '>=16'
+    dependencies:
+      react: 17.0.1
+      react-dom: 17.0.1_react@17.0.1
     dev: false
 
   /read-pkg-up/7.0.1:
