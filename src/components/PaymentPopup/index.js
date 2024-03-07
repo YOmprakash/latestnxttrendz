@@ -1,9 +1,9 @@
-import React, {useState} from 'react'
-import Popup from 'reactjs-popup'
+import {useState} from 'react'
+
 import './index.css'
 
-const PaymentPopup = ({handleCheckoutClick, total, cartList, onClose}) => {
-  const [selectedMethod, setSelectedMethod] = useState(null)
+const PaymentPopup = ({total, cartList, onClose}) => {
+  const [selectedMethod, setSelectedMethod] = useState('')
   const [orderPlaced, setOrderPlaced] = useState(false)
 
   const handleSelectPaymentMethod = method => {
@@ -66,9 +66,6 @@ const PaymentPopup = ({handleCheckoutClick, total, cartList, onClose}) => {
               className={`payment-method-btn ${
                 selectedMethod ? 'selected' : ''
               }`}
-              disabled={
-                !selectedMethod || selectedMethod !== 'Cash on Delivery'
-              }
               onClick={() => handleSelectPaymentMethod('Cash on Delivery')}
             >
               Cash on Delivery
@@ -85,7 +82,7 @@ const PaymentPopup = ({handleCheckoutClick, total, cartList, onClose}) => {
             <button
               type="button"
               className={`confirm-btn ${selectedMethod ? '' : 'disabled'}`}
-              disabled={selectedMethod === null}
+              disabled={selectedMethod === false}
               onClick={handleConfirmOrder}
             >
               Confirm Order

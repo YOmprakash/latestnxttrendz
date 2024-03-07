@@ -1,4 +1,3 @@
-import React, {useState} from 'react'
 import Popup from 'reactjs-popup'
 import PaymentPopup from '../PaymentPopup'
 
@@ -9,19 +8,6 @@ const CartSummary = ({cartList}) => {
   cartList.forEach(eachCartItem => {
     total += eachCartItem.price * eachCartItem.quantity
   })
-
-  // State to manage the visibility of the payment popup
-  const [isPaymentPopupOpen, setIsPaymentPopupOpen] = useState(false)
-
-  // Function to handle opening the payment popup
-  const handleCheckoutClick = () => {
-    setIsPaymentPopupOpen(true)
-  }
-
-  // Function to handle closing the payment popup
-  const handleClosePopup = () => {
-    setIsPaymentPopupOpen(false)
-  }
 
   return (
     <>
@@ -34,11 +20,7 @@ const CartSummary = ({cartList}) => {
         <Popup
           modal
           trigger={
-            <button
-              type="button"
-              className="checkout-button desktop-btn"
-              onClick={handleCheckoutClick}
-            >
+            <button type="button" className="checkout-button">
               Checkout
             </button>
           }
@@ -53,27 +35,6 @@ const CartSummary = ({cartList}) => {
           )}
         </Popup>
       </div>
-      <Popup
-        modal
-        trigger={
-          <button
-            type="button"
-            className="checkout-button mobile-btn"
-            onClick={handleCheckoutClick}
-          >
-            Checkout
-          </button>
-        }
-        position="top left"
-      >
-        {close => (
-          <PaymentPopup
-            total={total}
-            cartList={cartList}
-            onClose={close} // Pass the handleClosePopup function to PaymentPopup
-          />
-        )}
-      </Popup>
     </>
   )
 }

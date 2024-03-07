@@ -65,11 +65,8 @@
 }
 
 @media screen and (max-width: 767px) {
-  .mobile-btn {
-    display: block;
-  }
-  .desktop-btn {
-    display: none;
+  .checkout-button {
+    width: 100%;
   }
 }
 

@@ -24,7 +24,6 @@ class ProductItemDetails extends Component {
     similarProductsData: [],
     apiStatus: apiStatusConstants.initial,
     quantity: 1,
-    addedToCart: false,
   }
 
   componentDidMount() {
@@ -129,10 +128,7 @@ class ProductItemDetails extends Component {
         const {addCartItem} = value
         const onClickAddToCart = () => {
           addCartItem({...productData, quantity})
-          this.setState({addedToCart: true})
         }
-
-        const {addedToCart} = this.state
 
         return (
           <div className="product-details-success-view">
@@ -183,21 +179,14 @@ class ProductItemDetails extends Component {
                     <BsPlusSquare className="quantity-icon" />
                   </button>
                 </div>
-                {addedToCart ? (
-                  <Link to="/cart">
-                    <button type="button" className="button view-cart-btn">
-                      VIEW CART
-                    </button>
-                  </Link>
-                ) : (
-                  <button
-                    type="button"
-                    className="button add-to-cart-btn"
-                    onClick={onClickAddToCart}
-                  >
-                    ADD TO CART
-                  </button>
-                )}
+
+                <button
+                  type="button"
+                  className="button add-to-cart-btn"
+                  onClick={onClickAddToCart}
+                >
+                  ADD TO CART
+                </button>
               </div>
             </div>
             <h1 className="similar-products-heading">Similar Products</h1>

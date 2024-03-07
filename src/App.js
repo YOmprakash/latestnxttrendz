@@ -17,8 +17,6 @@ class App extends Component {
     cartList: [],
   }
 
-  //   TODO: Add your code for remove all cart items, increment cart item quantity, decrement cart item quantity, remove cart item
-
   addCartItem = product => {
     const {cartList} = this.state
     const existingProductIndex = cartList.findIndex(
@@ -26,12 +24,11 @@ class App extends Component {
     )
 
     if (existingProductIndex !== -1) {
-      // Product already exists in the cart, update its quantity
       const updatedCartList = cartList.map((item, index) => {
         if (index === existingProductIndex) {
           return {
             ...item,
-            quantity: item.quantity + 1, // Increase quantity by 1
+            quantity: item.quantity + 1,
           }
         }
         return item
@@ -39,7 +36,6 @@ class App extends Component {
 
       this.setState({cartList: updatedCartList})
     } else {
-      // Product doesn't exist in the cart, add it
       this.setState(prevState => ({
         cartList: [...prevState.cartList, {...product, quantity: 1}],
       }))
