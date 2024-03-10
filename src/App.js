@@ -42,6 +42,31 @@ class App extends Component {
     }
   }
 
+  addCartItem = product => {
+    const {cartList} = this.state
+    const existingProductIndex = cartList.findIndex(
+      item => item.id === product.id,
+    )
+
+    if (existingProductIndex !== -1) {
+      const updatedCartList = cartList.map((item, index) => {
+        if (index === existingProductIndex) {
+          return {
+            ...item,
+            quantity: item.quantity + product.quantity,
+          }
+        }
+        return item
+      })
+
+      this.setState({cartList: updatedCartList})
+    } else {
+      this.setState(prevState => ({
+        cartList: [...prevState.cartList, product],
+      }))
+    }
+  }
+
   removeCartItem = id => {
     const {cartList} = this.state
     const updateList = cartList.filter(each => each.id !== id)
